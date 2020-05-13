@@ -28,7 +28,7 @@ def weebify(bot: Bot, update: Update, args: List[str]):
 
 
 __help__ = """
- Originally Made By [Ayan Ansari](t.me/TechnoAyanOfficial)
+ Made By This Two Noobs [Unknown Hacker X](https://t.me/Unknown_Hacker_X) And [Noob Anon](https://t.me/NoobAnon) . 
  
  - /blackout <text>: Apply Blackout Style to your text
  """
