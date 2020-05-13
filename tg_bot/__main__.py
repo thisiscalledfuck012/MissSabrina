@@ -27,19 +27,11 @@ def escape_html(word):
     return escape(word)
 
 PM_START_TEXT = """
-Hello *{}* My name is *Sabrina*!
+Hi *{}* , My Name Is *MissMarvel* ! I'm A Group Manager Bot Managed By [My Master](https://t.me/NooBAnon) . 
 
-I'm here to manage your groups! 
+To Get My Status And Info And Updates.. Join [Miss Marvel Support](https://t.me/XploitCrew) . 
 
-Click Help button to find out more about how to use me to my full potential. 
-
-Join Support Chat ( @SabrinaChat ) if you need any support or help 
-
-Join ( @SabrinaOfficial ) if you want to keep up with the news, updates and bot downtime!
-
-Made by @TechnoAyanOfficial
-
-Want me to help you? [Click Here!](https://t.me/MissSabrina_bot?startgroup=true)
+Hit  /help To Find Out My Full Potential Use . 
 """
 
 
@@ -47,21 +39,33 @@ Want me to help you? [Click Here!](https://t.me/MissSabrina_bot?startgroup=true)
 
 HELP_STRINGS = """
 
-Hello! my name *{}*.
+Hello! I'm *MissMarvel* .
 
-*Main* available commands:
- - /start: Start the bot...
- - /help: help....
- - /donate: To find out more about donating!
+I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of the things I can help you with.
+
+*Main* *Commands* *Available* :
+
+ - /start: start the bot
+
+ - /help: PM's you this message.
+
+ - /help <module name>: PM's you info about that module.
+
+ - /donate: information about how to donate!
+
  - /settings:
-   - in PM: To find out what SETTINGS you have set....
-   - in a group:
+
+   - in PM: will send you your settings for all supported modules.
+
+   - in a group: will redirect you to pm, with all that chat's settings.
+
+
 
 {}
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll of the following commands  / or ! can  be used...\n")
 
-DONATE_STRING = """Hey you can Donate to [Ayan Ansari](t.me/TechnoAyanOfficial) for better server """
+DONATE_STRING = """Sorry Sir/Madam , I Don't Accept Donations! Instead Poor Any Poor Person 🙂 .I'll Feel Good.Thanks For Your Generosity. """
 
 
 IMPORTED = {}
@@ -153,7 +157,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             send_start(bot, update)
     else:
-        update.effective_message.reply_text("Yo, I'm alive👩")
+        update.effective_message.reply_text("My only weapon is the question. ask me for help!")
 
 def send_start(bot, update):
     #Try to remove old message
@@ -168,11 +172,11 @@ def send_start(bot, update):
     text = PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID, parse_mode=ParseMode.MARKDOWN)
                 
     keyboard = [[
-        InlineKeyboardButton(text=tld(chat.id, '🥳Add To Group'),
-                             url="https://t.me/MissSabrina_bot?startgroup=true"), InlineKeyboardButton(text="❓ Help", callback_data="help_back")
+        InlineKeyboardButton(text=tld(chat.id, 'Add To Group'),
+                             url="https://t.me/MissMarvel_bot?startgroup=true"), InlineKeyboardButton(text="❓ Help", callback_data="help_back")
         ]]
     keyboard += [[
-        InlineKeyboardButton(text=tld(chat.id, '👥 Support Group'), url="https://t.me/SabrinaChat")
+        InlineKeyboardButton(text=tld(chat.id, '👥 Support Group'), url="https://t.me/ZonersChat")
     ]]
 
     update.effective_message.reply_text(
@@ -415,8 +419,8 @@ def donate(bot: Bot, update: Update):
         update.effective_message.reply_text(DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
         if OWNER_ID != 594813047 and DONATION_LINK:
-            update.effective_message.reply_text("You can also donate to the person currently running me "
-                                                "[here]({})".format(DONATION_LINK),
+            update.effective_message.reply_text("Hope You Understood! Once Again"
+                                                "[Thank You]({})".format(DONATION_LINK),
                                                 parse_mode=ParseMode.MARKDOWN)
 
     else:
